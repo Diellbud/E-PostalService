@@ -10,10 +10,6 @@ fetch("http://localhost:3000/users")
 })
 var registerForm = document.getElementById("registerForm");
 
-function saveUsersToLS() {
-  localStorage.setItem("users", JSON.stringify(users));
-}
-
 function validateName(name) {
   let nameError = document.getElementById("nameError");
   if (name == "") {
@@ -90,7 +86,6 @@ function validateForm(e) {
         .then(res => res.json())
         .then(data => {
           alert("Registration successful!");
-          window.history.replaceState(null, null, window.location.href);
           window.location.hash = "signin";
         })
         .catch(error => {

@@ -7,14 +7,19 @@
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
   }
-  
+  #app{
+    padding: 20px;
+  }
   .mainContainer {
-    display: flex;
     height: 100vh;
   }
   
 .sideBar {
+    position: fixed;
     width: 15%;
+    left: 0;
+    right: 0;
+    height: 100vh;
     background-color: #333333;
     color: #ffffff;
     padding: 20px;
@@ -23,6 +28,8 @@
     align-items: center;
     gap: 60px;
     animation: slideIn 0.75s ease-out forwards;
+    z-index: 1021;
+    box-sizing: border-box;
   }
   .sideBar img {
     width: 200px;
@@ -62,7 +69,7 @@
     text-decoration: none;
   }
   #app{
-    width: 85%;
+    margin-left: 15%;
   }
 @keyframes slideIn {
     from {

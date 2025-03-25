@@ -109,6 +109,114 @@
       "address": "792 Oak St"
     },
     {
+      "month": 4,
+      "year": 1,
+      "name": "Linda",
+      "lastname": "Walker",
+      "productWeight": "3.4kg",
+      "productPrice": "34",
+      "address": "800 Oak St"
+    },
+    {
+      "month": 4,
+      "year": 1,
+      "name": "Michael",
+      "lastname": "King",
+      "productWeight": "3.5kg",
+      "productPrice": "35",
+      "address": "801 Oak St"
+    },
+    {
+      "month": 4,
+      "year": 1,
+      "name": "Nina",
+      "lastname": "Lopez",
+      "productWeight": "3.6kg",
+      "productPrice": "36",
+      "address": "802 Oak St"
+    },
+    {
+      "month": 4,
+      "year": 1,
+      "name": "Oliver",
+      "lastname": "Martinez",
+      "productWeight": "3.7kg",
+      "productPrice": "37",
+      "address": "803 Oak St"
+    },
+    {
+      "month": 5,
+      "year": 1,
+      "name": "Penny",
+      "lastname": "Evans",
+      "productWeight": "4kg",
+      "productPrice": "40",
+      "address": "1000 Pine St"
+    },
+    {
+      "month": 5,
+      "year": 1,
+      "name": "Quincy",
+      "lastname": "Foster",
+      "productWeight": "4.1kg",
+      "productPrice": "41",
+      "address": "1001 Pine St"
+    },
+    {
+      "month": 5,
+      "year": 1,
+      "name": "Riley",
+      "lastname": "Cameron",
+      "productWeight": "4.2kg",
+      "productPrice": "42",
+      "address": "1002 Pine St"
+    },
+    {
+      "month": 5,
+      "year": 1,
+      "name": "Samantha",
+      "lastname": "Reed",
+      "productWeight": "4.3kg",
+      "productPrice": "43",
+      "address": "1003 Pine St"
+    },
+    {
+      "month": 6,
+      "year": 1,
+      "name": "Thomas",
+      "lastname": "Morgan",
+      "productWeight": "4.5kg",
+      "productPrice": "45",
+      "address": "1100 Birch St"
+    },
+    {
+      "month": 6,
+      "year": 1,
+      "name": "Ursula",
+      "lastname": "Hill",
+      "productWeight": "4.6kg",
+      "productPrice": "46",
+      "address": "1101 Birch St"
+    },
+    {
+      "month": 6,
+      "year": 1,
+      "name": "Victor",
+      "lastname": "Scott",
+      "productWeight": "4.7kg",
+      "productPrice": "47",
+      "address": "1102 Birch St"
+    },
+    {
+      "month": 6,
+      "year": 1,
+      "name": "Wendy",
+      "lastname": "Roberts",
+      "productWeight": "4.8kg",
+      "productPrice": "48",
+      "address": "1103 Birch St"
+    },
+    {
       "month": 1,
       "year": 2,
       "name": "Emily",
@@ -217,112 +325,328 @@
       "address": "570 Birch St"
     },
     {
-      "month": 1,
-      "year": 3,
-      "name": "David",
-      "lastname": "Lee",
-      "productWeight": "3kg",
-      "productPrice": "30",
-      "address": "890 Cedar St"
+      "month": 4,
+      "year": 2,
+      "name": "Tom",
+      "lastname": "Bryant",
+      "productWeight": "2.2kg",
+      "productPrice": "22",
+      "address": "234 Oak St"
     },
     {
-      "month": 1,
-      "year": 3,
-      "name": "Tina",
-      "lastname": "Harris",
-      "productWeight": "3.1kg",
-      "productPrice": "31",
-      "address": "891 Cedar St"
+      "month": 4,
+      "year": 2,
+      "name": "Ivy",
+      "lastname": "Perry",
+      "productWeight": "2.3kg",
+      "productPrice": "23",
+      "address": "235 Oak St"
     },
     {
-      "month": 1,
-      "year": 3,
-      "name": "Uma",
-      "lastname": "Jackson",
-      "productWeight": "3.2kg",
-      "productPrice": "32",
-      "address": "892 Cedar St"
+      "month": 4,
+      "year": 2,
+      "name": "Zane",
+      "lastname": "Wood",
+      "productWeight": "2.4kg",
+      "productPrice": "24",
+      "address": "236 Oak St"
     },
     {
-      "month": 1,
-      "year": 3,
-      "name": "Victor",
-      "lastname": "King",
-      "productWeight": "3.3kg",
-      "productPrice": "33",
-      "address": "893 Cedar St"
-    },
-    {
-      "month": 2,
-      "year": 3,
-      "name": "Laura",
-      "lastname": "Martinez",
+      "month": 4,
+      "year": 2,
+      "name": "Fay",
+      "lastname": "Lopez",
       "productWeight": "2.5kg",
       "productPrice": "25",
-      "address": "123 Oak St"
+      "address": "237 Oak St"
     },
     {
-      "month": 2,
-      "year": 3,
-      "name": "Wendy",
-      "lastname": "Lopez",
-      "productWeight": "2.6kg",
-      "productPrice": "26",
-      "address": "124 Oak St"
-    },
-    {
-      "month": 2,
-      "year": 3,
-      "name": "Xander",
-      "lastname": "Moore",
+      "month": 5,
+      "year": 2,
+      "name": "Ben",
+      "lastname": "Miller",
       "productWeight": "2.7kg",
       "productPrice": "27",
-      "address": "125 Oak St"
+      "address": "340 Birch St"
+    },
+    {
+      "month": 5,
+      "year": 2,
+      "name": "Maya",
+      "lastname": "Rodriguez",
+      "productWeight": "2.8kg",
+      "productPrice": "28",
+      "address": "341 Birch St"
+    },
+    {
+      "month": 5,
+      "year": 2,
+      "name": "Oscar",
+      "lastname": "Tucker",
+      "productWeight": "2.9kg",
+      "productPrice": "29",
+      "address": "342 Birch St"
+    },
+    {
+      "month": 5,
+      "year": 2,
+      "name": "Max",
+      "lastname": "Evans",
+      "productWeight": "3kg",
+      "productPrice": "30",
+      "address": "343 Birch St"
+    },
+    {
+      "month": 6,
+      "year": 2,
+      "name": "Tyler",
+      "lastname": "Young",
+      "productWeight": "3.1kg",
+      "productPrice": "31",
+      "address": "456 Cedar St"
+    },
+    {
+      "month": 6,
+      "year": 2,
+      "name": "Monica",
+      "lastname": "Hall",
+      "productWeight": "3.2kg",
+      "productPrice": "32",
+      "address": "457 Cedar St"
+    },
+    {
+      "month": 6,
+      "year": 2,
+      "name": "Nina",
+      "lastname": "Peters",
+      "productWeight": "3.3kg",
+      "productPrice": "33",
+      "address": "458 Cedar St"
+    },
+    {
+      "month": 6,
+      "year": 2,
+      "name": "Eli",
+      "lastname": "Foster",
+      "productWeight": "3.4kg",
+      "productPrice": "34",
+      "address": "459 Cedar St"
+    },
+    {
+      "month": 1,
+      "year": 3,
+      "name": "Chris",
+      "lastname": "Johnson",
+      "productWeight": "3.5kg",
+      "productPrice": "35",
+      "address": "234 Maple St"
+    },
+    {
+      "month": 1,
+      "year": 3,
+      "name": "Angela",
+      "lastname": "Martinez",
+      "productWeight": "3.6kg",
+      "productPrice": "36",
+      "address": "235 Maple St"
+    },
+    {
+      "month": 1,
+      "year": 3,
+      "name": "Peter",
+      "lastname": "Davis",
+      "productWeight": "3.7kg",
+      "productPrice": "37",
+      "address": "236 Maple St"
+    },
+    {
+      "month": 1,
+      "year": 3,
+      "name": "Hannah",
+      "lastname": "Evans",
+      "productWeight": "3.8kg",
+      "productPrice": "38",
+      "address": "237 Maple St"
     },
     {
       "month": 2,
       "year": 3,
-      "name": "Yara",
-      "lastname": "Nelson",
-      "productWeight": "2.8kg",
-      "productPrice": "28",
-      "address": "126 Oak St"
+      "name": "Mark",
+      "lastname": "Taylor",
+      "productWeight": "3kg",
+      "productPrice": "30",
+      "address": "1001 Oak St"
+    },
+    {
+      "month": 2,
+      "year": 3,
+      "name": "Rachel",
+      "lastname": "Garcia",
+      "productWeight": "3.1kg",
+      "productPrice": "31",
+      "address": "1002 Oak St"
+    },
+    {
+      "month": 2,
+      "year": 3,
+      "name": "Lucas",
+      "lastname": "Lee",
+      "productWeight": "3.2kg",
+      "productPrice": "32",
+      "address": "1003 Oak St"
+    },
+    {
+      "month": 2,
+      "year": 3,
+      "name": "Emma",
+      "lastname": "Walker",
+      "productWeight": "3.3kg",
+      "productPrice": "33",
+      "address": "1004 Oak St"
     },
     {
       "month": 3,
       "year": 3,
-      "name": "James",
-      "lastname": "Garcia",
-      "productWeight": "2kg",
-      "productPrice": "20",
-      "address": "456 Pine St"
+      "name": "Sam",
+      "lastname": "Harris",
+      "productWeight": "4kg",
+      "productPrice": "40",
+      "address": "1201 Pine St"
+    },
+    {
+      "month": 3,
+      "year": 3,
+      "name": "Lily",
+      "lastname": "Roberts",
+      "productWeight": "4.1kg",
+      "productPrice": "41",
+      "address": "1202 Pine St"
+    },
+    {
+      "month": 3,
+      "year": 3,
+      "name": "Jake",
+      "lastname": "Kim",
+      "productWeight": "4.2kg",
+      "productPrice": "42",
+      "address": "1203 Pine St"
     },
     {
       "month": 3,
       "year": 3,
       "name": "Zoe",
-      "lastname": "Perez",
-      "productWeight": "2.1kg",
-      "productPrice": "21",
-      "address": "457 Pine St"
+      "lastname": "Morris",
+      "productWeight": "4.3kg",
+      "productPrice": "43",
+      "address": "1204 Pine St"
     },
     {
-      "month": 3,
+      "month": 4,
       "year": 3,
-      "name": "Aaron",
-      "lastname": "Quinn",
-      "productWeight": "2.2kg",
-      "productPrice": "22",
-      "address": "458 Pine St"
+      "name": "Owen",
+      "lastname": "Parker",
+      "productWeight": "4.4kg",
+      "productPrice": "44",
+      "address": "1301 Birch St"
     },
     {
-      "month": 3,
+      "month": 4,
       "year": 3,
-      "name": "Bella",
-      "lastname": "Reed",
-      "productWeight": "2.3kg",
-      "productPrice": "23",
-      "address": "459 Pine St"
+      "name": "Caitlyn",
+      "lastname": "Wright",
+      "productWeight": "4.5kg",
+      "productPrice": "45",
+      "address": "1302 Birch St"
+    },
+    {
+      "month": 4,
+      "year": 3,
+      "name": "Elijah",
+      "lastname": "Miller",
+      "productWeight": "4.6kg",
+      "productPrice": "46",
+      "address": "1303 Birch St"
+    },
+    {
+      "month": 4,
+      "year": 3,
+      "name": "Sophia",
+      "lastname": "Jackson",
+      "productWeight": "4.7kg",
+      "productPrice": "47",
+      "address": "1304 Birch St"
+    },
+    {
+      "month": 5,
+      "year": 3,
+      "name": "Ethan",
+      "lastname": "Moore",
+      "productWeight": "5kg",
+      "productPrice": "50",
+      "address": "1401 Cedar St"
+    },
+    {
+      "month": 5,
+      "year": 3,
+      "name": "Grace",
+      "lastname": "Taylor",
+      "productWeight": "5.1kg",
+      "productPrice": "51",
+      "address": "1402 Cedar St"
+    },
+    {
+      "month": 5,
+      "year": 3,
+      "name": "Tyler",
+      "lastname": "Anderson",
+      "productWeight": "5.2kg",
+      "productPrice": "52",
+      "address": "1403 Cedar St"
+    },
+    {
+      "month": 5,
+      "year": 3,
+      "name": "Mia",
+      "lastname": "Young",
+      "productWeight": "5.3kg",
+      "productPrice": "53",
+      "address": "1404 Cedar St"
+    },
+    {
+      "month": 6,
+      "year": 3,
+      "name": "Noah",
+      "lastname": "Hernandez",
+      "productWeight": "5.4kg",
+      "productPrice": "54",
+      "address": "1501 Oak St"
+    },
+    {
+      "month": 6,
+      "year": 3,
+      "name": "Isabella",
+      "lastname": "Scott",
+      "productWeight": "5.5kg",
+      "productPrice": "55",
+      "address": "1502 Oak St"
+    },
+    {
+      "month": 6,
+      "year": 3,
+      "name": "Aiden",
+      "lastname": "Gonzalez",
+      "productWeight": "5.6kg",
+      "productPrice": "56",
+      "address": "1503 Oak St"
+    },
+    {
+      "month": 6,
+      "year": 3,
+      "name": "Chloe",
+      "lastname": "Lopez",
+      "productWeight": "5.7kg",
+      "productPrice": "57",
+      "address": "1504 Oak St"
     }
   ],
   "fakeDatabase": [
@@ -360,6 +684,39 @@
       "issues": 9
     },
     {
+      "month": 4,
+      "year": 1,
+      "revenue": 60000.5,
+      "expenses": 25000.6,
+      "total": 35000.9,
+      "successfuldeliveries": 480,
+      "faileddeliveries": 20,
+      "totaldeliveries": 500,
+      "issues": 7
+    },
+    {
+      "month": 5,
+      "year": 1,
+      "revenue": 65000.4,
+      "expenses": 27000.3,
+      "total": 38000.1,
+      "successfuldeliveries": 490,
+      "faileddeliveries": 10,
+      "totaldeliveries": 500,
+      "issues": 5
+    },
+    {
+      "month": 6,
+      "year": 1,
+      "revenue": 70000.6,
+      "expenses": 29000.7,
+      "total": 41000.5,
+      "successfuldeliveries": 500,
+      "faileddeliveries": 0,
+      "totaldeliveries": 500,
+      "issues": 3
+    },
+    {
       "month": 1,
       "year": 2,
       "revenue": 53000.32,
@@ -393,57 +750,134 @@
       "issues": 8
     },
     {
-      "month": 1,
-      "year": 3,
-      "revenue": 51000.99,
-      "expenses": 20000.49,
-      "total": 31000.87,
-      "successfuldeliveries": 450,
-      "faileddeliveries": 50,
-      "totaldeliveries": 500,
-      "issues": 10
-    },
-    {
-      "month": 2,
-      "year": 3,
-      "revenue": 60000.32,
-      "expenses": 25000.11,
-      "total": 35000.01,
+      "month": 4,
+      "year": 2,
+      "revenue": 61000.3,
+      "expenses": 25000.2,
+      "total": 36000.1,
       "successfuldeliveries": 480,
       "faileddeliveries": 20,
+      "totaldeliveries": 500,
+      "issues": 4
+    },
+    {
+      "month": 5,
+      "year": 2,
+      "revenue": 67000.5,
+      "expenses": 29000.6,
+      "total": 38000.9,
+      "successfuldeliveries": 490,
+      "faileddeliveries": 10,
       "totaldeliveries": 500,
       "issues": 5
     },
     {
+      "month": 6,
+      "year": 2,
+      "revenue": 72000.7,
+      "expenses": 30000.8,
+      "total": 42000.5,
+      "successfuldeliveries": 500,
+      "faileddeliveries": 0,
+      "totaldeliveries": 500,
+      "issues": 2
+    },
+    {
+      "month": 1,
+      "year": 3,
+      "revenue": 74000.8,
+      "expenses": 31000.4,
+      "total": 43000.4,
+      "successfuldeliveries": 500,
+      "faileddeliveries": 0,
+      "totaldeliveries": 500,
+      "issues": 4
+    },
+    {
+      "month": 2,
+      "year": 3,
+      "revenue": 75000.9,
+      "expenses": 32000.5,
+      "total": 43000.4,
+      "successfuldeliveries": 490,
+      "faileddeliveries": 10,
+      "totaldeliveries": 500,
+      "issues": 3
+    },
+    {
       "month": 3,
       "year": 3,
-      "revenue": 57000.99,
-      "expenses": 23000.49,
-      "total": 34000.87,
-      "successfuldeliveries": 480,
-      "faileddeliveries": 20,
+      "revenue": 76000.5,
+      "expenses": 33000.3,
+      "total": 43000.2,
+      "successfuldeliveries": 495,
+      "faileddeliveries": 5,
       "totaldeliveries": 500,
-      "issues": 9
+      "issues": 2
+    },
+    {
+      "month": 4,
+      "year": 3,
+      "revenue": 77000.6,
+      "expenses": 34000.4,
+      "total": 43000.2,
+      "successfuldeliveries": 500,
+      "faileddeliveries": 0,
+      "totaldeliveries": 500,
+      "issues": 3
+    },
+    {
+      "month": 5,
+      "year": 3,
+      "revenue": 78000.7,
+      "expenses": 35000.5,
+      "total": 43000.2,
+      "successfuldeliveries": 500,
+      "faileddeliveries": 0,
+      "totaldeliveries": 500,
+      "issues": 3
+    },
+    {
+      "month": 6,
+      "year": 3,
+      "revenue": 79000.8,
+      "expenses": 36000.6,
+      "total": 43000.2,
+      "successfuldeliveries": 500,
+      "faileddeliveries": 0,
+      "totaldeliveries": 500,
+      "issues": 1
     }
   ],
   "users": [
     {
-      "id": "3a4c",
-      "name": "Diell",
-      "email": "diell34@gmail.com",
+      "id": "bbd6",
+      "name": "diell",
+      "email": "hfhfajh@gira.aaa",
       "password": "123123"
+    }
+  ],
+  "issues": [
+    {
+      "id": "bbd6",
+      "title": "hello",
+      "desc": "aaaaaaaaaaaaaa",
+      "type": 1,
+      "priority": "aaaaaaaaaaaaaa"
     },
     {
-      "id": "bad6",
-      "name": "test",
-      "email": "test@gmail.com",
-      "password": "testtest"
+      "id": "1e53",
+      "title": "Diell not working",
+      "desc": "When i do this it does that",
+      "type": "3",
+      "priority": "5"
     },
     {
-      "id": "7839",
-      "name": "Diell",
-      "email": "budimadiell@gmail.com",
-      "password": "123123"
+      "id": "719e",
+      "title": "Diell AAAAAAAAAAAAAAA",
+      "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat",
+      "type": "3",
+      "priority": "5"
     }
   ]
 }

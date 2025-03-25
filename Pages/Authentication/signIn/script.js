@@ -32,7 +32,6 @@ function signIn(e) {
   if (user.password === password) {
     alert("Sign in successful");
     passwordError.textContent = "";
-    window.history.replaceState(null, null, window.location.href);
     window.location.hash = "home";
   } else {
     passwordError.textContent = "Incorrect Password!";

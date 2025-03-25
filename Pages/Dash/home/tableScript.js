@@ -89,45 +89,67 @@ fetch("http://localhost:3000/fakeDatabaseTable")
       function createMultipleRows(e) {
         deleteCurrentRowsOnRefresh();
         let value = Number(timeFrameCurrent);
+    
         switch (value) {
-          case 1:
-            createRows(1, 1);
-            break;
-          case 2:
-            createRows(2, 1);
-            break;
-
-          case 3:
-            createRows(3, 1);
-            break;
-
-          case 4:
-            createRows(1, 2);
-            break;
-
-          case 5:
-            createRows(2, 2);
-            break;
-
-          case 6:
-            createRows(3, 2);
-            break;
-
-          case 7:
-            createRows(1, 3);
-            break;
-          case 8:
-            createRows(2, 3);
-            break;
-          case 9:
-            createRows(3, 3);
-            break;
-
-          default:
-            break;
+            case 1:
+                createRows(1, 1);
+                break;
+            case 2:
+                createRows(2, 1);
+                break;
+            case 3:
+                createRows(3, 1);
+                break;
+            case 4:
+                createRows(4, 1);
+                break;
+            case 5:
+                createRows(5, 1);
+                break;
+            case 6:
+                createRows(6, 1);
+                break;
+            case 7:
+                createRows(1, 2);
+                break;
+            case 8:
+                createRows(2, 2);
+                break;
+            case 9:
+                createRows(3, 2);
+                break;
+            case 10:
+                createRows(4, 2);
+                break;
+            case 11:
+                createRows(5, 2);
+                break;
+            case 12:
+                createRows(6, 2);
+                break;
+            case 13:
+                createRows(1, 3);
+                break;
+            case 14:
+                createRows(2, 3);
+                break;
+            case 15:
+                createRows(3, 3);
+                break;
+            case 16:
+                createRows(4, 3);
+                break;
+            case 17:
+                createRows(5, 3);
+                break;
+            case 18:
+                createRows(6, 3);
+                break;
+            default:
+                break;
         }
-      }
-
+    }
+  
       function deleteCurrentRowsOnRefresh() {
         table.querySelectorAll("tr").forEach((row, index) => {
           if (index !== 0) {

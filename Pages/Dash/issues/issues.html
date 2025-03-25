@@ -4,8 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="issues/style.css">
 </head>
 <body>
-    <h1>Issues</h1>
+    <div id="issueContainer">
+
+    </div>
+    <form id="issueForm">
+        <h1>Create a Issue</h1>
+        <label for="title">Title:</label>
+        <input type="text" id="title" placeholder="Title">
+        <label for="desc">Description:</label>
+        <textarea id="desc" placeholder="Description"></textarea>
+        <label for="type">Type of Issue:</label>
+        <select id="type">
+            <option value="1">Payment</option>
+            <option value="2">Product Listings</option>
+            <option value="3">Shipping</option>
+            <option value="4">Account</option>
+            <option value="5">Technical</option>
+        </select>
+        <input type="file" id="fileId" accept="image/*">
+        <button type="submit">Submit</button>
+    </form>
 </body>
 </html>

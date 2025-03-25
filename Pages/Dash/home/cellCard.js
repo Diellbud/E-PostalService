@@ -56,7 +56,7 @@ function createCell(type, month, year) {
 function cellObject(month, year) {
   const objectKeys = Object.keys(database[0]);
   objectKeys.forEach((key) => {
-    if (key !== "month" && key !== "year") {
+    if (key !== "month" && key !== "year" && key !== "id") {
       createCell(key, month, year);
     }
   });
@@ -67,17 +67,25 @@ function createMultipleCellsOnclick(e) {
   const value = Number(e.target.value);
 
   const timeMapping = {
-    1: [1, 1],
+    1: [1, 1],  
     2: [2, 1],
     3: [3, 1],
-    4: [1, 2],
-    5: [2, 2],
-    6: [3, 2],
-    7: [1, 3],
-    8: [2, 3],
-    9: [3, 3],
+    4: [4, 1],
+    5: [5, 1],
+    6: [6, 1],
+    7: [1, 2],
+    8: [2, 2],
+    9: [3, 2],
+    10: [4, 2],
+    11: [5, 2],
+    12: [6, 2],
+    13: [1, 3],
+    14: [2, 3],
+    15: [3, 3],
+    16: [4, 3],
+    17: [5, 3],
+    18: [6, 3],
   };
-
   const [month, year] = timeMapping[value];
   cellObject(month, year);
 }
