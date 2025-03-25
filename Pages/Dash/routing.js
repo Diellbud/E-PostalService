@@ -4,12 +4,22 @@ const routes = {
   home: "./home/home.html",
   users: "./users/users.html",
   issues: "./issues/issues.html",
+  logout: "../Authentication/Logout/logout.html",
+  signin: "../Authentication/signIn/signIn.html",
+  register: "../Authentication/Register/register.html"
 };
 
 const router = () => {
-  const route = window.location.hash.replace("#", "");
+
+  let file;
+  let route = window.location.hash.replace("#", "");
   const renderContent = document.getElementById("app");
-  const file = routes[route];
+  if (route === ""){
+    window.location.hash = "home"
+    route = "home"
+  }else{
+    file = routes[route];
+  }
   if (file) {
     fetch(file)
       .then((response) => response.text())
@@ -23,15 +33,18 @@ const router = () => {
       });
   }
 };
+
 const loadScripts = (route) => {
   const scripts = {
     home: [
-      "./home/fakeDatabase.js",
       "./home/cellCard.js",
       "./home/tableScript.js",
     ],
     users: ["./users/userScript.js"],
     issues: ["./issues/issueScript.js"],
+    logout: ["../Authentication/Logout/script.js"],
+    signin: ["../Authentication/signIn/script.js"],
+    register: ["../Authentication/Register/script.js"],
   };
   const scriptFiles = scripts[route];
   if (scriptFiles) {
@@ -47,8 +60,6 @@ const loadScriptSequentially = (scripts, index) => {
     script.className = "dynamic-script";
     script.onload = () => loadScriptSequentially(scripts, index + 1);
     document.body.appendChild(script);
-  } else {
-    initializePage();
   }
 };
 
@@ -58,10 +69,7 @@ const removeExistingScripts = () => {
     .forEach((script) => script.remove());
 };
 
-const initializePage = () => {
-    cellObject(1, 1);
-    createRows(1, 1);
-};
+
 
 window.addEventListener("hashchange", router);
 window.addEventListener("load", router);

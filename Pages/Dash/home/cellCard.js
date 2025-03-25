@@ -1,5 +1,7 @@
 var mainDashCellContainer = document.getElementById("mainDashCellContainer");
 var timeFrame = document.getElementById("timeFrame");
+var database = [];
+
 function convertFtoCapital(string) {
   return string[0].toUpperCase() + string.slice(1);
 }
@@ -8,124 +10,84 @@ function numberWithCommas(x) {
   return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 
-if (timeFrameCurrent) {
-  timeFrame.value = timeFrameCurrent
-}else{
-  timeFrame.value = 1
+function deleteCurrentCellsOnRefresh() {
+  mainDashCellContainer.innerHTML = "";
 }
 
 function createCell(type, month, year) {
-  let typeOf = type.toLowerCase();
-  typeOf = convertFtoCapital(typeOf);
-  switch (typeOf) {
+  let displayType = convertFtoCapital(type.toLowerCase());
+  switch (displayType) {
     case "Successfuldeliveries":
-      typeOf = "Successful Deliveries";
+      displayType = "Successful Deliveries";
       break;
     case "Faileddeliveries":
-      typeOf = "Failed Deliveries";
+      displayType = "Failed Deliveries";
       break;
     case "Totaldeliveries":
-      typeOf = "Total Deliveries";
-      break;
-    default:
+      displayType = "Total Deliveries";
       break;
   }
-  fakeDatabase.forEach((object) => {
-    if (object.year == year) {
-      if (object.month == month) {
-        let cell = document.createElement("div");
-        cell.className = "mainCell";
-        let cellH3 = document.createElement("h3");
-        let cellH3Text = document.createTextNode(typeOf);
-        cellH3.appendChild(cellH3Text);
-        let cellValueText = document.createTextNode(
-          numberWithCommas(object[type.toLowerCase()])
-        );
-        if ("Revenue" == typeOf || "Expenses" == typeOf || "Total" == typeOf) {
-          cellValueText = document.createTextNode(
-            "$" + numberWithCommas(object[type.toLowerCase()])
-          );
-        }
-        let cellValue = document.createElement("h2");
-        cellValue.appendChild(cellValueText);
-        cell.appendChild(cellH3);
-        cell.appendChild(cellValue);
-        mainDashCellContainer.appendChild(cell);
+
+  database.forEach((object) => {
+    if (object.year === year && object.month === month) {
+      const cell = document.createElement("div");
+      cell.className = "mainCell";
+
+      const cellH3 = document.createElement("h3");
+      cellH3.textContent = displayType;
+
+      const value = object[type.toLowerCase()];
+      let formattedValue;
+      if (["revenue", "expenses", "total"].includes(type.toLowerCase())) {
+        formattedValue = `$${numberWithCommas(value)}`;
+      } else {
+        formattedValue = numberWithCommas(value);
       }
+      const cellValue = document.createElement("h2");
+      cellValue.textContent = formattedValue;
+
+      cell.appendChild(cellH3);
+      cell.appendChild(cellValue);
+      mainDashCellContainer.appendChild(cell);
     }
   });
 }
 
 function cellObject(month, year) {
-  let objectKeys = Object.keys(fakeDatabase[0]);
+  const objectKeys = Object.keys(database[0]);
   objectKeys.forEach((key) => {
-    switch (key) {
-      case "month":
-        break;
-      case "year":
-        break;
-
-      default:
-        createCell(key, month, year);
-        break;
+    if (key !== "month" && key !== "year") {
+      createCell(key, month, year);
     }
   });
 }
 
 function createMultipleCellsOnclick(e) {
   deleteCurrentCellsOnRefresh();
-  let value = Number(e.target.value);
-  switch (value) {
-    case 1:
-      cellObject(1, 1);
-      break;
-    case 2:
-      cellObject(2, 1);
-      break;
+  const value = Number(e.target.value);
 
-    case 3:
-      cellObject(3, 1);
-      break;
+  const timeMapping = {
+    1: [1, 1],
+    2: [2, 1],
+    3: [3, 1],
+    4: [1, 2],
+    5: [2, 2],
+    6: [3, 2],
+    7: [1, 3],
+    8: [2, 3],
+    9: [3, 3],
+  };
 
-    case 4:
-      cellObject(1, 2);
-      break;
-
-    case 5:
-      cellObject(2, 2);
-      break;
-
-    case 6:
-      cellObject(3, 2);
-      break;
-
-    case 7:
-      cellObject(1, 3);
-      break;
-    case 8:
-      cellObject(2, 3);
-      break;
-    case 9:
-      cellObject(3, 3);
-      break;
-
-    default:
-      break;
-  }
+  const [month, year] = timeMapping[value];
+  cellObject(month, year);
 }
-
-function deleteCurrentCellsOnRefresh() {
-  let children = mainDashCellContainer.children;
-  let convertedChildren = Array.from(children);
-  convertedChildren.forEach((child) => {
-    child.remove();
+fetch("http://localhost:3000/fakeDatabase")
+  .then((response) => response.json())
+  .then((data) => {
+    database = data;
+    createMultipleCellsOnclick({ target: timeFrame });
+    timeFrame.addEventListener("change", createMultipleCellsOnclick);
+  })
+  .catch((error) => {
+    console.error("Error fetching database:", error);
   });
-}
-var timeFrameCurrent = timeFrame.value
-function reload(e) {
-  createMultipleCellsOnclick(e);
-  timeFrameCurrent = timeFrame.value
-}
-timeFrame.addEventListener("change", reload)
-
-timeFrame.addEventListener("change", createMultipleCellsOnclick);

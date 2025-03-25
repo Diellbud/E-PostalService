@@ -1,10 +1,14 @@
-const saveUsers = JSON.parse(localStorage.getItem("users"));
-const initialUsers = saveUsers || [];
+let users = [];
+fetch("http://localhost:3000/users")
+  .then(res => res.json())
+  .then(data => {
+    users = data;
+})
+.catch(error =>{
+  console.log(error);
+  
+})
 const registerForm = document.getElementById("registerForm");
-
-let users = initialUsers;
-
-let newId = users.length + 1;
 
 function saveUsersToLS() {
   localStorage.setItem("users", JSON.stringify(users));
@@ -71,17 +75,26 @@ function validateForm(e) {
     if (validateEmail(email)) {
       if (validatePassword(password)) {
         let userObject = {
-          id: newId++,
           name: name,
           email: email,
           password: password,
+          role:undefined,
         };
-        users.push(userObject);
-        saveUsersToLS();
-        alert("Registration successful!");
-        name.value = "";
-        email.value = "";
-        password.value = "";
+        fetch("http://localhost:3000/users",{
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(userObject)})
+        
+        .then(res => res.json())
+        .then(data => {
+          alert("Registration successful!");
+          window.location.hash = "signin";
+        })
+        .catch(error => {
+          console.log(error);
+        })
       }
     }
   }
