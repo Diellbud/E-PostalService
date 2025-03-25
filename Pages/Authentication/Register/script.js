@@ -8,7 +8,7 @@ fetch("http://localhost:3000/users")
   console.log(error);
   
 })
-const registerForm = document.getElementById("registerForm");
+var registerForm = document.getElementById("registerForm");
 
 function saveUsersToLS() {
   localStorage.setItem("users", JSON.stringify(users));
@@ -67,7 +67,7 @@ function validatePassword(password) {
 
 function validateForm(e) {
   e.preventDefault();
-  let formData = new FormData(e.target);
+  let formData = new FormData(registerForm);
   let name = formData.get("name").trim();
   let email = formData.get("email").trim();
   let password = formData.get("password").trim();
@@ -90,6 +90,7 @@ function validateForm(e) {
         .then(res => res.json())
         .then(data => {
           alert("Registration successful!");
+          window.history.replaceState(null, null, window.location.href);
           window.location.hash = "signin";
         })
         .catch(error => {
@@ -99,5 +100,4 @@ function validateForm(e) {
     }
   }
 }
-
 registerForm.addEventListener("submit", validateForm);

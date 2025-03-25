@@ -1,6 +1,6 @@
-const registerForm = document.getElementById("registerForm");
+var registerForm = document.getElementById("registerForm");
 
-let users = [];
+var users = [];
 fetch("http://localhost:3000/users")
   .then(res => res.json())
   .then(data => {
@@ -13,7 +13,7 @@ fetch("http://localhost:3000/users")
 function signIn(e) {
   e.preventDefault();
   
-  let formData = new FormData(e.target);
+  let formData = new FormData(registerForm);
   let email = formData.get("email").trim();
   let password = formData.get("password").trim();
   let passwordError = document.getElementById("passwordError");
@@ -32,7 +32,7 @@ function signIn(e) {
   if (user.password === password) {
     alert("Sign in successful");
     passwordError.textContent = "";
-    e.target.reset();
+    window.history.replaceState(null, null, window.location.href);
     window.location.hash = "home";
   } else {
     passwordError.textContent = "Incorrect Password!";

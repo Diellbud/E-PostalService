@@ -39,6 +39,7 @@ const loadScripts = (route) => {
     home: [
       "./home/cellCard.js",
       "./home/tableScript.js",
+      "./home/chart.js"
     ],
     users: ["./users/userScript.js"],
     issues: ["./issues/issueScript.js"],

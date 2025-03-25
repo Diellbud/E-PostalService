@@ -427,6 +427,23 @@
     }
   ],
   "users": [
-
+    {
+      "id": "3a4c",
+      "name": "Diell",
+      "email": "diell34@gmail.com",
+      "password": "123123"
+    },
+    {
+      "id": "bad6",
+      "name": "test",
+      "email": "test@gmail.com",
+      "password": "testtest"
+    },
+    {
+      "id": "7839",
+      "name": "Diell",
+      "email": "budimadiell@gmail.com",
+      "password": "123123"
+    }
   ]
 }
