@@ -1,5 +1,5 @@
 .timeFrame {
-  width: 100%;
+  width: 10%;
   padding: 10px;
   margin-bottom: 20px;
   font-size: 1em;
@@ -56,7 +56,7 @@
   margin-bottom: 10px;
   text-align: left;
   font-weight: bold;
-  animation: fadeIn 1.5s ease-out forwards;
+  animation: fadeIn 1s ease-out forwards;
 }
 
 .dataTable {
@@ -87,18 +87,15 @@
 
 .chartContainer {
   width: 100%;
-  background-color: #ffffff;
-  border: 1px solid #dddddd;
-  border-radius: 5px;
+  height: 300px;
   padding: 15px;
-  margin-top: 20px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
   animation: fadeIn 1.5s ease-out forwards;
 }
 
 #dynamicChart {
   width: 100%;
-  height: 350px;
+  height: 100%;
 }
 
 @media (max-width: 768px) {

@@ -25,13 +25,14 @@
     padding: 20px;
     display: flex;
     flex-direction: column;
+    justify-content: flex-start;
     align-items: center;
     gap: 60px;
     animation: slideIn 0.75s ease-out forwards;
     z-index: 1021;
     box-sizing: border-box;
   }
-  .sideBar img {
+  .logo{
     width: 200px;
     height: 120px;
     background-color: #f4f4f4;
@@ -70,6 +71,22 @@
   }
   #app{
     margin-left: 15%;
+  }
+  .userSideBar{
+    display: flex;
+    align-self: flex-start;
+    justify-self: flex-end;
+    justify-content: space-around;
+    gap: 20px;
+    align-items: center;
+    margin-top: auto;
+    text-align: center;
+  }
+  .userSideBarImg{
+    height: 64px;
+    width: 64px;
+    border-radius: 32px;
+    background-color: white;
   }
 @keyframes slideIn {
     from {

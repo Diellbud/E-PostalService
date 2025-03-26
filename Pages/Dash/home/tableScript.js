@@ -1,170 +1,54 @@
 var table = document.getElementById("dataTable");
-var tableHead = document.createElement("tr");
-var timeFrameCurrent;
-if (timeFrameCurrent) {
-  timeFrame.value = timeFrameCurrent;
-} else {
-  timeFrame.value = 1;
-  timeFrameCurrent = timeFrame.value;
-}
-function createTableHead(key) {
-  let tableTh = document.createElement("th");
-  let tableThText;
-  switch (key) {
-    case "lastname":
-      tableThText = document.createTextNode("Last Name");
-      break;
-    case "productWeight":
-      tableThText = document.createTextNode("Product Weight");
-      break;
-    case "productPrice":
-      tableThText = document.createTextNode("Product Price");
-      break;
-    default:
-      tableThText = document.createTextNode(convertFtoCapital(key));
-      break;
-  }
-  tableTh.appendChild(tableThText);
-  tableHead.appendChild(tableTh);
+var yearSelector = document.getElementById("yearSelector");
+var monthSelector = document.getElementById("monthSelector");
+var data = [];
+
+function convertFtoCapital(string) {
+  return string[0].toUpperCase() + string.slice(1);
 }
 
-table.appendChild(tableHead);
+function createTableHead(objectKeys) {
+  table.innerHTML = "";
+  const tableHead = document.createElement("tr");
+  objectKeys.forEach(key => {
+    if (!["month", "year", "id"].includes(key)) {
+      const th = document.createElement("th");
+      th.textContent = key === "lastname" ? "Last Name" :
+                       key === "productWeight" ? "Product Weight" :
+                       key === "productPrice" ? "Product Price" :
+                       convertFtoCapital(key);
+      tableHead.appendChild(th);
+    }
+  });
+  table.appendChild(tableHead);
+}
+
+function createRows(month, year) {
+  data.forEach(obj => {
+    if (obj.year === year && obj.month === month) {
+      const tr = document.createElement("tr");
+      ["name", "lastname", "productWeight", "productPrice", "address"].forEach(prop => {
+        const td = document.createElement("td");
+        td.textContent = prop === "productPrice" ? `$${obj[prop]}` : obj[prop];
+        tr.appendChild(td);
+      });
+      table.appendChild(tr);
+    }
+  });
+}
+
+function updateTable() {
+  table.innerHTML = "";
+  createTableHead(Object.keys(data[0]));
+  createRows(Number(monthSelector.value), Number(yearSelector.value));
+}
 
 fetch("http://localhost:3000/fakeDatabaseTable")
-  .then((response) => {
-    return response.json();
+  .then(res => res.json())
+  .then(fetchedData => {
+    data = fetchedData;
+    updateTable();
+    yearSelector.addEventListener("change", updateTable);
+    monthSelector.addEventListener("change", updateTable);
   })
-  .then((data) => {
-      function tableObject() {
-        let objectKeys = Object.keys(data[0]);
-        objectKeys.forEach((key) => {
-          switch (key) {
-            case "month":
-              break;
-            case "year":
-              break;
-              case "id":
-                break;
-            default:
-              createTableHead(key);
-              break;
-          }
-        });
-      }
-      tableObject();
-
-      function createRows(month, year) {
-        data.forEach((object) => {
-          if (object.year == year) {
-            if (object.month == month) {
-              let tr = document.createElement("tr");
-              let name = document.createElement("td");
-              let nameText = document.createTextNode(object.name);
-              let lastName = document.createElement("td");
-              let lastNameText = document.createTextNode(object.lastname);
-              let weight = document.createElement("td");
-              let weightText = document.createTextNode(object.productWeight);
-              let price = document.createElement("td");
-              let priceText = document.createTextNode(
-                "$" + object.productPrice
-              );
-              let address = document.createElement("td");
-              let adressText = document.createTextNode(object.address);
-              name.appendChild(nameText);
-              lastName.appendChild(lastNameText);
-              weight.appendChild(weightText);
-              price.appendChild(priceText);
-              address.appendChild(adressText);
-              tr.appendChild(name);
-              tr.appendChild(lastName);
-              tr.appendChild(weight);
-              tr.appendChild(price);
-              tr.appendChild(address);
-              table.appendChild(tr);
-            }
-          }
-        });
-      }
-
-      function createMultipleRows(e) {
-        deleteCurrentRowsOnRefresh();
-        let value = Number(timeFrameCurrent);
-    
-        switch (value) {
-            case 1:
-                createRows(1, 1);
-                break;
-            case 2:
-                createRows(2, 1);
-                break;
-            case 3:
-                createRows(3, 1);
-                break;
-            case 4:
-                createRows(4, 1);
-                break;
-            case 5:
-                createRows(5, 1);
-                break;
-            case 6:
-                createRows(6, 1);
-                break;
-            case 7:
-                createRows(1, 2);
-                break;
-            case 8:
-                createRows(2, 2);
-                break;
-            case 9:
-                createRows(3, 2);
-                break;
-            case 10:
-                createRows(4, 2);
-                break;
-            case 11:
-                createRows(5, 2);
-                break;
-            case 12:
-                createRows(6, 2);
-                break;
-            case 13:
-                createRows(1, 3);
-                break;
-            case 14:
-                createRows(2, 3);
-                break;
-            case 15:
-                createRows(3, 3);
-                break;
-            case 16:
-                createRows(4, 3);
-                break;
-            case 17:
-                createRows(5, 3);
-                break;
-            case 18:
-                createRows(6, 3);
-                break;
-            default:
-                break;
-        }
-    }
-  
-      function deleteCurrentRowsOnRefresh() {
-        table.querySelectorAll("tr").forEach((row, index) => {
-          if (index !== 0) {
-            row.remove();
-          }
-        });
-      }
-
-      function reload(e) {
-        timeFrameCurrent = e.target.value;
-        createMultipleRows();
-      }
-      timeFrame.addEventListener("change", reload);
-      createMultipleRows();
-  })
-  .catch((error) => {
-    console.error(error);
-  });
+  .catch(console.error);

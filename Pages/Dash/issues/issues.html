@@ -3,19 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Issue Tracker</title>
     <link rel="stylesheet" href="issues/style.css">
 </head>
 <body>
-    <div id="issueContainer">
-
+    <div class="issueTableContainer" id="issueTableContainer">
+        <table id="issueTable">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Title</th>
+                    <th>Description</th>
+                    <th>Type</th>
+                </tr>
+            </thead>
+            <tbody id="issueTableBody"></tbody>
+        </table>
     </div>
+    <h1 class="havingProblems">Having Problems?</h1>
     <form id="issueForm">
-        <h1>Create a Issue</h1>
+        <h1>Create an Issue</h1>
+    
         <label for="title">Title:</label>
         <input type="text" id="title" placeholder="Title">
+    
         <label for="desc">Description:</label>
         <textarea id="desc" placeholder="Description"></textarea>
+    
         <label for="type">Type of Issue:</label>
         <select id="type">
             <option value="1">Payment</option>
@@ -24,8 +38,13 @@
             <option value="4">Account</option>
             <option value="5">Technical</option>
         </select>
+        <label for="fleId">Screenshot:</label>
         <input type="file" id="fileId" accept="image/*">
         <button type="submit">Submit</button>
     </form>
+    
+    <p class="disclaimerText">By submitting this form, your information will be securely stored and reviewed by our support team.</p>
+
+    <script src="script.js"></script>
 </body>
 </html>

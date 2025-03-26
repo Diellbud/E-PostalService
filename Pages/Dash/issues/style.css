@@ -1,128 +1,137 @@
-form {
-    background-color: white;
+
+h1 {
+    text-align: center;
+    color: #333;
+  }
+  .havingProblems{
+    font-size: 3em;
+    margin-top: 30px;
+}
+  form {
+    background-color: #ffffff;
     padding: 20px;
     margin: 20px auto;
-    width: 90%;
     max-width: 600px;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-form label {
-    font-size: 16px;
-    margin-bottom: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  form label {
     display: block;
-}
-
-form input,
-form select,
-form textarea {
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: #333;
+  }
+  
+  form input,
+  form select,
+  form textarea {
     width: 100%;
     padding: 12px;
-    margin: 10px 0;
-    border: 1px solid #cccccc;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
     border-radius: 4px;
-    font-size: 16px;
     box-sizing: border-box;
-}
-
-form textarea {
-    height: 120px;
-    resize: none;
-}
-
-form button {
-    width: 100%;
-    padding: 12px;
+    font-size: 15px;
+  }
+  
+  form textarea {
+    resize: vertical;
+  }
+  
+  form button {
     background-color: #007bff;
     color: white;
+    padding: 12px;
     border: none;
     border-radius: 4px;
     font-size: 16px;
     cursor: pointer;
+    width: 100%;
     transition: background-color 0.3s ease;
-}
+  }
+  
+  form button:hover {
+    background-color: #0056b3;
+  }
 
-form button:hover {
-    background-color: #0066d4;
-}
-
-#issueContainer {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-    margin: 20px;
-}
-
-.issueCard {
-    background-color: #f9f9f9;
-    padding: 15px;
-    max-height: 200px;
-    width: 300px;
+  .issueTableContainer {
+    display: none;
+    overflow-x: auto;
+    margin: 40px auto;
+    max-width: 1000px;
+    background-color: #fff;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-left: 5px solid #1c7be0;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    padding: 30px;
-}
-
-.issueCard:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-
-.issueCardTitle {
-    font-size: 20px;
-    font-weight: bold;
-    color: #333333;
-    margin-bottom: 10px;
-}
-
-.issueCardDesc {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.5s ease-out forwards;
+  }
+  
+  #issueTable {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  #issueTable th,
+  #issueTable td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+  }
+  
+  #issueTable th {
+    background-color: #007bff;
+    color: white;
     font-size: 16px;
-    color: #666666;
-    margin-bottom: 10px;
-}
+  }
+  
+  #issueTable tbody tr:hover {
+    background-color: #f1f9ff;
+  }
 
-.issueCardType, .issueCardPriority {
-    font-size: 14px;
-    color: #888888;
-    margin-bottom: 5px;
-}
-
-.issueCardId {
-    font-size: 12px;
-    color: #bbbbbb;
-    margin-top: 10px;
-}
-
-@media (max-width: 768px) {
+  .type {
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-weight: 500;
+    color: #fff;
+    display: inline-block;
+  }
+  
+  .type.payment {
+    background-color: #17a2b8;
+  }
+  
+  .type.product-listings {
+    background-color: #28a745;
+  }
+  
+  .type.shipping {
+    background-color: #ffc107;
+    color: #333;
+  }
+  
+  .type.account {
+    background-color: #6f42c1;
+  }
+  
+  .type.technical {
+    background-color: #007bff;
+  }
+  .disclaimerText {
+    font-size: 0.9em;
+    color: #666;
+    text-align: center;
+    margin-top: -5px;
+    margin-bottom: 15px;
+  }
+  @media (max-width: 768px) {
     form {
-        width: 95%;
-        padding: 15px;
+      padding: 15px;
+      margin: 20px;
     }
-
-    .issueCard {
-        width: 45%;
+  
+    #issueTable th,
+    #issueTable td {
+      padding: 10px;
+      font-size: 14px;
     }
-}
-
-@media (max-width: 480px) {
-    form {
-        width: 100%;
-        padding: 10px;
-    }
-
-    .issueCard {
-        width: 100%;
-    }
-
-    .issueCardTitle {
-        font-size: 18px;
-    }
-
-    .issueCardDesc {
-        font-size: 14px;
-    }
-}
+  }

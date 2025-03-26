@@ -74,7 +74,7 @@ function validateForm(e) {
           name: name,
           email: email,
           password: password,
-          role:undefined,
+          role:"normal",
         };
         fetch("http://localhost:3000/users",{
           method: "POST",

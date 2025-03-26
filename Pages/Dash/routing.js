@@ -1,4 +1,3 @@
-
 const body = document.body;
 const routes = {
   home: "./home/home.html",
@@ -6,41 +5,67 @@ const routes = {
   issues: "./issues/issues.html",
   logout: "../Authentication/Logout/logout.html",
   signin: "../Authentication/signIn/signIn.html",
-  register: "../Authentication/Register/register.html"
+  register: "../Authentication/Register/register.html",
 };
 
-const router = () => {
+const userSideBarName = document.getElementById("userSideBarName");
 
-  let file;
+function convertFtoCapital(string) {
+  return string[0].toUpperCase() + string.slice(1);
+}
+
+function numberWithCommas(x) {
+  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+
+const router = () => {
   let route = window.location.hash.replace("#", "");
   const renderContent = document.getElementById("app");
-  if (route === ""){
-    window.location.hash = "home"
-    route = "home"
-  }else{
-    file = routes[route];
-  }
-  if (file) {
-    fetch(file)
-      .then((response) => response.text())
-      .then((data) => {
-        renderContent.innerHTML = data;
-        loadScripts(route);
-      })
-      .catch((error) => {
-        renderContent.innerHTML = `<p>Error</p>`;
-        console.warn(error);
-      });
-  }
+
+  fetch("http://localhost:3000/users")
+    .then((res) => res.json())
+    .then((data) => {
+      const userId = localStorage.getItem("cookie");
+      const loggedInUser = data.find((user) => user.id === userId);
+
+      if ((route === "home" || route === "users" || route === "issues") && !loggedInUser) {
+        window.location.hash = "signin";
+        return;
+      }
+
+      if (route === "signin" && loggedInUser) {
+        window.location.hash = "home";
+        return;
+      }
+
+      if (loggedInUser && userSideBarName) {
+        userSideBarName.textContent = convertFtoCapital(loggedInUser.name);
+      }
+
+      if (route === "") {
+        window.location.hash = "signin";
+        return;
+      }
+
+      const file = routes[route];
+      if (file) {
+        fetch(file)
+          .then((response) => response.text())
+          .then((data) => {
+            renderContent.innerHTML = data;
+            loadScripts(route);
+          })
+          .catch((error) => {
+            renderContent.innerHTML = `<p>Error loading page.</p>`;
+            console.warn(error);
+          });
+      }
+    });
 };
 
 const loadScripts = (route) => {
   const scripts = {
-    home: [
-      "./home/cellCard.js",
-      "./home/tableScript.js",
-      "./home/chart.js"
-    ],
+    home: ["./home/cellCard.js", "./home/tableScript.js", "./home/chart.js"],
     users: ["./users/userScript.js"],
     issues: ["./issues/issueScript.js"],
     logout: ["../Authentication/Logout/script.js"],
@@ -65,12 +90,8 @@ const loadScriptSequentially = (scripts, index) => {
 };
 
 const removeExistingScripts = () => {
-  document
-    .querySelectorAll(".dynamic-script")
-    .forEach((script) => script.remove());
+  document.querySelectorAll(".dynamic-script").forEach((script) => script.remove());
 };
-
-
 
 window.addEventListener("hashchange", router);
 window.addEventListener("load", router);
