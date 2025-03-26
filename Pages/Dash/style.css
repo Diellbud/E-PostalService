@@ -82,18 +82,22 @@
     margin-top: auto;
     text-align: center;
   }
-  .userSideBarImg{
-    height: 64px;
-    width: 64px;
-    border-radius: 32px;
-    background-color: white;
+  .userSideBarImg {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid white;
+    margin-top: auto;
   }
 @keyframes slideIn {
     from {
       transform: translateX(-100%);
+      opacity: 0;
     }
     to {
       transform: translateX(0);
+      opacity: 1;
     }
   }
   
@@ -105,4 +109,16 @@
       opacity: 1;
     }
   }
+    
+  @keyframes fadeSlideIn {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
   

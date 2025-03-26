@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Issue Tracker</title>
     <link rel="stylesheet" href="issues/style.css">
-</head>
-<body>
     <div class="issueTableContainer" id="issueTableContainer">
         <table id="issueTable">
             <thead>
@@ -15,6 +7,7 @@
                     <th>Title</th>
                     <th>Description</th>
                     <th>Type</th>
+                    <th>Priority</th>
                 </tr>
             </thead>
             <tbody id="issueTableBody"></tbody>
@@ -37,6 +30,7 @@
             <option value="3">Shipping</option>
             <option value="4">Account</option>
             <option value="5">Technical</option>
+            <option value="6">Other</option>
         </select>
         <label for="fleId">Screenshot:</label>
         <input type="file" id="fileId" accept="image/*">
@@ -46,5 +40,3 @@
     <p class="disclaimerText">By submitting this form, your information will be securely stored and reviewed by our support team.</p>
 
     <script src="script.js"></script>
-</body>
-</html>

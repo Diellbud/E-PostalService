@@ -1,0 +1,45 @@
+.settingsContainer {
+    max-width: 600px;
+    margin: 40px auto;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .settingsContainer h1 {
+    text-align: center;
+    color: #007bff;
+    margin-bottom: 20px;
+  }
+  
+  .settingsContainer form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .settingsContainer label {
+    font-weight: bold;
+    margin-top: 15px;
+  }
+  
+  .settingsContainer input {
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .settingsContainer button {
+    margin-top: 20px;
+    padding: 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  
+  .settingsContainer button:hover {
+    background-color: #0056b3;
+  }

@@ -1,8 +1,11 @@
 const body = document.body;
+
 const routes = {
   home: "./home/home.html",
   users: "./users/users.html",
   issues: "./issues/issues.html",
+  detailedIssue: "./issues/detailedIssue/detailedissue.html",
+  settings: "./settings/settings.html",
   logout: "../Authentication/Logout/logout.html",
   signin: "../Authentication/signIn/signIn.html",
   register: "../Authentication/Register/register.html",
@@ -17,9 +20,9 @@ function convertFtoCapital(string) {
 function numberWithCommas(x) {
   return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
-
 const router = () => {
-  let route = window.location.hash.replace("#", "");
+  const fullHash = window.location.hash.replace("#", "");
+  const route = fullHash.split("?")[0];
   const renderContent = document.getElementById("app");
 
   fetch("http://localhost:3000/users")
@@ -28,7 +31,10 @@ const router = () => {
       const userId = localStorage.getItem("cookie");
       const loggedInUser = data.find((user) => user.id === userId);
 
-      if ((route === "home" || route === "users" || route === "issues") && !loggedInUser) {
+      if (
+        !(route === "signin" || route === "logout" || route === "register") &&
+        !loggedInUser
+      ) {
         window.location.hash = "signin";
         return;
       }
@@ -40,8 +46,14 @@ const router = () => {
 
       if (loggedInUser && userSideBarName) {
         userSideBarName.textContent = convertFtoCapital(loggedInUser.name);
+      
+        const sidebarImg = document.querySelector(".userSideBarImg");
+        if (loggedInUser.profilePic) {
+          sidebarImg.src = loggedInUser.profilePic;
+        } else {
+          sidebarImg.src = "../../Images/Main/user-128.svg";
+        }
       }
-
       if (route === "") {
         window.location.hash = "signin";
         return;
@@ -61,6 +73,8 @@ const router = () => {
           });
       }
     });
+    console.log("Current hash:", window.location.hash);
+console.log("Resolved route:", route);
 };
 
 const loadScripts = (route) => {
@@ -68,10 +82,13 @@ const loadScripts = (route) => {
     home: ["./home/cellCard.js", "./home/tableScript.js", "./home/chart.js"],
     users: ["./users/userScript.js"],
     issues: ["./issues/issueScript.js"],
+    detailedIssue: ["./issues/detailedIssue/detailedissue.js"],
+    settings: ["./settings/script.js"],
     logout: ["../Authentication/Logout/script.js"],
     signin: ["../Authentication/signIn/script.js"],
     register: ["../Authentication/Register/script.js"],
   };
+
   const scriptFiles = scripts[route];
   if (scriptFiles) {
     removeExistingScripts();
@@ -90,7 +107,9 @@ const loadScriptSequentially = (scripts, index) => {
 };
 
 const removeExistingScripts = () => {
-  document.querySelectorAll(".dynamic-script").forEach((script) => script.remove());
+  document
+    .querySelectorAll(".dynamic-script")
+    .forEach((script) => script.remove());
 };
 
 window.addEventListener("hashchange", router);

@@ -1,0 +1,23 @@
+<link rel="stylesheet" href="./issues/detailedIssue/style.css">
+<div class="issueDetailContainer">
+    <h1>Issue Details</h1>
+    <p class="detailItem"><label>ID:</label> <span id="detailId"></span></p>
+    <p class="detailItem"><label>Title:</label> <span id="detailTitle"></span></p>
+    <p class="detailItem"><label>Description:</label> <span id="detailDesc"></span></p>
+    <p class="detailItem"><label>Type:</label> <span id="detailType"></span></p>
+    <div id="imageWrapper">
+      <p class="detailItem"><label>Attached Image:</label></p>
+      <img id="detailImage" class="issueImage" src="" alt="Issue Image" />
+    </div>
+  
+    <form id="priorityForm">
+      <label for="prioritySelect">Set Priority:</label>
+      <select id="prioritySelect">
+        <option value="1">Low</option>
+        <option value="2">Medium</option>
+        <option value="3">High</option>
+        <option value="4">Critical</option>
+      </select>
+      <button type="submit">Update Priority</button>
+    </form>
+  </div>
