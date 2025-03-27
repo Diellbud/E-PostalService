@@ -1,0 +1,133 @@
+.detailedUserContainer {
+    max-width: 600px;
+    margin: 40px auto;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .detailedUserContainer h1 {
+    text-align: center;
+    color: #007bff;
+    margin-bottom: 25px;
+  }
+  
+  .userDetailCard {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+  }
+  
+  .userImage {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid #007bff;
+  }
+  
+  .userInfo {
+    flex-grow: 1;
+  }
+  
+  .userInfo p {
+    font-size: 16px;
+    margin: 8px 0;
+  }
+  
+  .userInfo .label {
+    font-weight: bold;
+    color: #444;
+  }
+  .roleEditSection {
+    margin-top: 20px;
+  }
+  
+  #roleSelect {
+    padding: 8px;
+    margin-right: 10px;
+  }
+  
+  #saveRoleBtn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  #saveRoleBtn:hover {
+    background-color: #0056b3;
+  }
+  
+  .deleteBtn {
+    margin-top: 30px;
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .deleteBtn:hover {
+    background-color: #a71d2a;
+  }
+  @media (max-width: 768px) {
+    .userDetailCard {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+  
+    .userImage {
+      width: 100px;
+      height: 100px;
+    }
+  
+    .userInfo {
+      width: 100%;
+    }
+  
+    .userInfo p {
+      font-size: 15px;
+    }
+  
+    .roleEditSection {
+      text-align: center;
+    }
+  
+    #roleSelect {
+      width: 100%;
+      margin: 10px 0;
+    }
+  
+    #saveRoleBtn,
+    .deleteBtn {
+      width: 100%;
+      padding: 10px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .detailedUserContainer {
+      padding: 20px;
+      margin: 20px;
+    }
+  
+    .userImage {
+      width: 80px;
+      height: 80px;
+    }
+  
+    .userInfo p {
+      font-size: 14px;
+    }
+  
+    .deleteBtn {
+      margin-top: 20px;
+    }
+  }
+  

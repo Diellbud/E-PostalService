@@ -33,8 +33,7 @@
     box-sizing: border-box;
   }
   .logo{
-    width: 200px;
-    height: 120px;
+    width: 90%;
     background-color: #f4f4f4;
     border-radius: 16px;
     padding: 20px;
@@ -87,7 +86,7 @@
     height: 60px;
     border-radius: 50%;
     object-fit: cover;
-    border: 2px solid white;
+    background-color: white;
     margin-top: auto;
   }
 @keyframes slideIn {
@@ -120,5 +119,67 @@
       transform: translateY(0);
     }
   }
+  @media (max-width: 1200px) {
+    .logo{
+      display: none;
+    }
+    .sideBar ul{
+      margin-top: 100px;
+    }
+    }
+  @media (max-width: 1000px) {
+    .sideBar {
+      padding: 10px;
+      gap: 20px;
+    }
   
+    .sideBar ul li a {
+      font-size: 0; /* hides the text */
+    }
   
+    .sideBar ul li a i {
+      font-size: 20px;
+      margin-right: 0;
+    }
+    .userSideBar {
+      flex-direction: column;
+      align-items: center;
+      gap: 5px;
+      align-self: center;
+    }
+  
+    #app {
+      padding: 15px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .sideBar {
+      width: 100%;
+      height: auto;
+      flex-direction: row;
+      justify-content: space-around;
+      padding: 10px 0;
+      position: relative;
+    }
+  
+    .sideBar ul {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      width: 100%;
+    }
+  
+    .sideBar ul li {
+      margin-bottom: 0;
+    }
+  
+    .userSideBar {
+      display: none;
+    }
+  
+    #app {
+      margin-left: 0;
+      margin-top: 80px;
+    }
+  }

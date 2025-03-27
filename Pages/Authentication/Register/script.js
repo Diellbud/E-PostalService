@@ -1,4 +1,4 @@
-let users = [];
+var users = [];
 fetch("http://localhost:3000/users")
   .then(res => res.json())
   .then(data => {
@@ -74,7 +74,7 @@ function validateForm(e) {
           name: name,
           email: email,
           password: password,
-          role:"normal",
+          role:"user",
         };
         fetch("http://localhost:3000/users",{
           method: "POST",

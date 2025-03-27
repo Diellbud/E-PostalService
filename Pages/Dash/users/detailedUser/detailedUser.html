@@ -1,0 +1,25 @@
+<link rel="stylesheet" href="./users/detailedUser/style.css">
+<div class="detailedUserContainer">
+    <h1>User Details</h1>
+    <div class="userDetailCard">
+      <img id="detailUserImg" src="" alt="Profile Picture" class="userImage" />
+      <div class="userInfo">
+        <p><span class="label">ID:</span> <span id="detailUserId"></span></p>
+        <p><span class="label">Name:</span> <span id="detailUserName"></span></p>
+        <p><span class="label">Email:</span> <span id="detailUserEmail"></span></p>
+        <p><span class="label">Role:</span> <span id="detailUserRole"></span></p>
+      </div>
+    </div>
+    <div class="roleEditSection">
+        <label for="roleSelect">Change Role:</label>
+        <select id="roleSelect">
+          <option value="user">User</option>
+          <option value="admin">Admin</option>
+        </select>
+        <button id="saveRoleBtn">Save Role</button>
+      </div>
+      
+      <button id="deleteUserBtn" class="deleteBtn">Delete User</button>
+      
+  </div>
+  

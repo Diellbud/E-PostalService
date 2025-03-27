@@ -59,3 +59,184 @@
   form#priorityForm button:hover {
     background-color: #0056b3;
   }
+  .commentsSection {
+    margin-top: 30px;
+  }
+  
+  .commentsSection h2 {
+    margin-bottom: 10px;
+  }
+  
+  #commentList {
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: 15px;
+  }
+  
+  #commentList li {
+    background: #f4f4f4;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 6px;
+  }
+  
+  #commentForm textarea {
+    width: 100%;
+    height: 80px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    resize: vertical;
+    border-radius: 4px;
+    margin-bottom: 10px;
+  }
+  
+  #commentForm button {
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  #commentList li {
+    margin-bottom: 10px;
+    line-height: 1.6;
+  }
+  
+  #commentList strong {
+    color: #007bff;
+  }
+  .commentCard {
+    background-color: #f9f9f9;
+    border-radius: 6px;
+    padding: 10px 15px;
+    margin-bottom: 12px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  }
+  
+  .commentText {
+    font-size: 15px;
+    margin-bottom: 8px;
+    color: #333;
+  }
+  
+  .commentMeta {
+    font-size: 13px;
+    color: #777;
+    display: flex;
+    justify-content: space-between;
+  }
+  .commentUser {
+    font-weight: 500;
+    color: #0056b3;
+    font-size: 14px;
+  }
+  @media (max-width: 768px) {
+    .issueTableContainer {
+      width: 95%;
+      overflow-x: auto;
+    }
+  
+    #issueTable {
+      display: block;
+      width: 100%;
+      overflow-x: auto;
+    }
+  
+    #issueTable thead {
+      display: none;
+    }
+  
+    #issueTable tbody,
+    #issueTable tr,
+    #issueTable td {
+      display: block;
+      width: 100%;
+      box-sizing: border-box;
+    }
+  
+    #issueTable tr {
+      margin-bottom: 15px;
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      padding: 10px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    }
+  
+    #issueTable td {
+      text-align: left;
+      padding: 8px 10px;
+      position: relative;
+    }
+  
+    #issueTable td::before {
+      content: attr(data-label);
+      font-weight: bold;
+      display: block;
+      margin-bottom: 5px;
+      color: #555;
+    }
+  }
+  @media (max-width: 768px) {
+    .issueDetailContainer {
+      padding: 20px;
+      margin: 20px 10px;
+      box-shadow: none;
+      border-radius: 0;
+    }
+  
+    .detailItem {
+      font-size: 1em;
+      display: block;
+      margin-bottom: 12px;
+    }
+  
+    .detailItem label {
+      min-width: unset;
+      display: block;
+      margin-bottom: 5px;
+    }
+  
+    .issueImage {
+      max-width: 100%;
+      height: auto;
+      margin-top: 10px;
+      display: block;
+    }
+  
+    form#priorityForm select,
+    form#priorityForm button {
+      width: 100%;
+      margin: 8px 0;
+      font-size: 1em;
+    }
+  
+    .commentsSection h2 {
+      font-size: 1.4em;
+    }
+  
+    #commentForm textarea {
+      height: 70px;
+      font-size: 14px;
+    }
+  
+    #commentForm button {
+      width: 100%;
+      margin-top: 5px;
+    }
+  
+    .commentCard {
+      padding: 10px;
+    }
+  
+    .commentMeta {
+      flex-direction: column;
+      gap: 4px;
+    }
+  
+    .commentUser {
+      font-size: 13px;
+    }
+  }
+  

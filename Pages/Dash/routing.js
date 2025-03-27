@@ -5,6 +5,7 @@ const routes = {
   users: "./users/users.html",
   issues: "./issues/issues.html",
   detailedIssue: "./issues/detailedIssue/detailedissue.html",
+  detailedUser: "./users/detailedUser/detailedUser.html",
   settings: "./settings/settings.html",
   logout: "../Authentication/Logout/logout.html",
   signin: "../Authentication/signIn/signIn.html",
@@ -24,7 +25,9 @@ const router = () => {
   const fullHash = window.location.hash.replace("#", "");
   const route = fullHash.split("?")[0];
   const renderContent = document.getElementById("app");
-
+  const queryString = fullHash.includes("?") ? fullHash.split("?")[1] : "";
+  const queryParams = new URLSearchParams(queryString);
+  window.currentRouteParams = Object.fromEntries(queryParams.entries());
   fetch("http://localhost:3000/users")
     .then((res) => res.json())
     .then((data) => {
@@ -46,13 +49,21 @@ const router = () => {
 
       if (loggedInUser && userSideBarName) {
         userSideBarName.textContent = convertFtoCapital(loggedInUser.name);
-      
+
         const sidebarImg = document.querySelector(".userSideBarImg");
         if (loggedInUser.profilePic) {
           sidebarImg.src = loggedInUser.profilePic;
         } else {
           sidebarImg.src = "../../Images/Main/user-128.svg";
         }
+      }
+      if (route === "detailedIssue" && loggedInUser.role !== "admin") {
+        window.location.hash = "issue";
+        return;
+      }
+      if (route === "detailedIssue" && loggedInUser.role !== "admin") {
+        window.location.hash = "issue";
+        return;
       }
       if (route === "") {
         window.location.hash = "signin";
@@ -73,8 +84,8 @@ const router = () => {
           });
       }
     });
-    console.log("Current hash:", window.location.hash);
-console.log("Resolved route:", route);
+  console.log("Current hash:", window.location.hash);
+  console.log("Resolved route:", route);
 };
 
 const loadScripts = (route) => {
@@ -83,6 +94,7 @@ const loadScripts = (route) => {
     users: ["./users/userScript.js"],
     issues: ["./issues/issueScript.js"],
     detailedIssue: ["./issues/detailedIssue/detailedissue.js"],
+    detailedUser: ["./users/detailedUser/script.js"],
     settings: ["./settings/script.js"],
     logout: ["../Authentication/Logout/script.js"],
     signin: ["../Authentication/signIn/script.js"],

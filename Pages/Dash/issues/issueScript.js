@@ -39,25 +39,25 @@ function loadIssues() {
 }
 
 function addIssueRow(issue) {
-    const row = document.createElement("tr");
-  
-    row.addEventListener("click", () => {
-      window.location.hash = `detailedIssue?id=${issue.id}`;
-    });
-  
-    const typeText = typeMap[issue.type];
-    const priorityLabel = mapPriority(issue.priority);
-  
-    row.innerHTML = `
-      <td>${issue.id}</td>
-      <td>${issue.title}</td>
-      <td>${issue.desc}</td>
-      <td><span class="type ${typeText.toLowerCase().replace(" ", "-")}">${typeText}</span></td>
-      <td><span class="priority ${priorityLabel.toLowerCase()}">${priorityLabel}</span></td>
-    `;
-  
-    issueTableBody.appendChild(row);
-  }
+  const row = document.createElement("tr");
+  row.addEventListener("click", () => {
+    window.location.hash = `detailedIssue?id=${issue.id}`;
+  });
+
+  const typeText = typeMap[issue.type];
+  const priorityClass = issue.priority?.toLowerCase() || "low";
+
+  row.innerHTML = `
+    <td data-label="ID">${issue.id}</td>
+    <td data-label="Title">${issue.title}</td>
+    <td data-label="Description">${issue.desc}</td>
+    <td data-label="Type"><span class="type ${typeText.toLowerCase().replace(" ", "-")}">${typeText}</span></td>
+    <td data-label="Priority"><span class="priority ${priorityClass}">${issue.priority || "Low"}</span></td>
+  `;
+
+  issueTableBody.appendChild(row);
+}
+
   
   function mapPriority(priority) {
     switch (priority) {
