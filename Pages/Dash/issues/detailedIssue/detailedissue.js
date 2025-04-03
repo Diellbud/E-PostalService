@@ -32,13 +32,10 @@ fetch(`http://localhost:3000/issues/${issueId}`)
     detailDesc.textContent = data.desc;
     detailType.textContent = mapType(data.type);
 
-    if (data.img) {
+    if (data.img) {    
       detailImage.src = data.img;
       detailImage.classList.add("visible");
       detailImage.classList.remove("hidden");
-    } else {
-      detailImage.classList.add("hidden");
-      detailImage.classList.remove("visible");
     }
 
     if (data.priority) {

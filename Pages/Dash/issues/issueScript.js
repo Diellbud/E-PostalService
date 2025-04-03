@@ -45,14 +45,15 @@ function addIssueRow(issue) {
   });
 
   const typeText = typeMap[issue.type];
-  const priorityClass = issue.priority?.toLowerCase() || "low";
+  const priorityText = mapPriority(issue.priority);
+  const priorityClass = priorityText.toLowerCase();
 
   row.innerHTML = `
     <td data-label="ID">${issue.id}</td>
     <td data-label="Title">${issue.title}</td>
     <td data-label="Description">${issue.desc}</td>
     <td data-label="Type"><span class="type ${typeText.toLowerCase().replace(" ", "-")}">${typeText}</span></td>
-    <td data-label="Priority"><span class="priority ${priorityClass}">${issue.priority || "Low"}</span></td>
+    <td data-label="Priority"><span class="priority ${priorityClass}">${priorityText}</span></td>
   `;
 
   issueTableBody.appendChild(row);
@@ -68,6 +69,7 @@ function addIssueRow(issue) {
       default: return "Unset";
     }
   }
+
 
 function createIssue(e) {
     e.preventDefault();

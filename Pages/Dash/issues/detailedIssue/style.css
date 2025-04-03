@@ -131,6 +131,9 @@
     color: #0056b3;
     font-size: 14px;
   }
+  .visible{
+    display: block;
+  }
   @media (max-width: 768px) {
     .issueTableContainer {
       width: 95%;
@@ -177,8 +180,7 @@
       margin-bottom: 5px;
       color: #555;
     }
-  }
-  @media (max-width: 768px) {
+
     .issueDetailContainer {
       padding: 20px;
       margin: 20px 10px;

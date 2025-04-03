@@ -61,8 +61,8 @@ const router = () => {
         window.location.hash = "issue";
         return;
       }
-      if (route === "detailedIssue" && loggedInUser.role !== "admin") {
-        window.location.hash = "issue";
+      if (route === "detailedUser" && loggedInUser.role !== "admin") {
+        window.location.hash = "users";
         return;
       }
       if (route === "") {
